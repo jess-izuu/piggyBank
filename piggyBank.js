@@ -45,5 +45,5 @@ function calcWeeks() {
   finalDisplayString = choreOneTotal + ' ' + '(' + choreOneLabel + ')'
 
   displayy = document.getElementById('totalTime')
-  displayy.innerText = finalDisplayString
+  displayy.innerText = "test";
 }
