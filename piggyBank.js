@@ -1,39 +1,52 @@
-function calcWeeks() {
-  /*get form input */
-  choreOneInput = document.getElementById('choreOne').value
-  choreTwoInput = document.getElementById('choreTwo').value
-  choreThreeInput = document.getElementById('choreThree').value
-  choreFourInput = document.getElementById('choreFour').value
-  choreFiveInput = document.getElementById('choreFive').value
-  goalInput = document.getElementById('goal').value
+const displayy = document.getElementById('totalTime')
+const saveButton = document.getElementById('saveButton')
 
+/*get form input */
+const choreOneInput = document.getElementById('choreOne').value
+const choreTwoInput = document.getElementById('choreTwo').value
+const choreThreeInput = document.getElementById('choreThree').value
+const choreFourInput = document.getElementById('choreFour').value
+const choreFiveInput = document.getElementById('choreFive').value
+const goalInput = document.getElementById('goal').value
+
+/*Get label Text*/
+let choreOneLabel = document.getElementsByClassName('choreOneClass')
+let choreTwoLabel = document.getElementsByClassName('choreTwoClass')
+let choreThreeLabel = document.getElementsByClassName('choreThreeClass')
+let choreFourLabel = document.getElementsByClassName('choreFourClass')
+let choreFiveLabel = document.getElementsByClassName('choreFiveClass')
+
+/*Calculate today's date*/
+var today = new Date()
+var dd = String(today.getDate()).padStart(2, '0')
+var mm = String(today.getMonth() + 1).padStart(2, '0')
+var yyyy = today.getFullYear()
+today = mm + '/' + dd + '/' + yyyy
+const todaysDate = document.getElementById('todaysDate')
+const endDate = document.getElementById('endDate')
+
+/*Save Button Event Listener*/
+saveButton.addEventListener('click', function () {
   /*parse input to ints*/
-  choreOneInt = parseInt(choreOneInput, 10)
-  choreTwoInt = parseInt(choreTwoInput, 10)
-  choreThreeInt = parseInt(choreThreeInput, 10)
-  choreFourInt = parseInt(choreFourInput, 10)
-  choreFiveInt = parseInt(choreFiveInput, 10)
-  goalInt = parseInt(goalInput, 10)
+  const choreOneInt = parseInt(choreOneInput, 10)
+  const choreTwoInt = parseInt(choreTwoInput, 10)
+  const choreThreeInt = parseInt(choreThreeInput, 10)
+  const choreFourInt = parseInt(choreFourInput, 10)
+  const choreFiveInt = parseInt(choreFiveInput, 10)
+  const goalInt = parseInt(goalInput, 10)
 
   /*calculate hours based on goal*/
-  choreOneTotal = goalInt / choreOneInt / 7
-  choreTwoTotal = goalInt / choreTwoInt / 7
-  choreThreeTotal = goalInt / choreThreeInt / 7
-  choreFourTotal = goalInt / choreFourInt / 7
-  choreFiveTotal = goalInt / choreFiveInt / 7
-
-  /*Get label Text*/
-  choreOneLabel = document.getElementsByClassName('choreOneClass')
-  choreTwoLabel = document.getElementsByClassName('choreTwoClass')
-  choreTwoLabel = document.getElementsByClassName('choreThreeClass')
-  choreFourLabel = document.getElementsByClassName('choreFourClass')
-  choreFiveLabel = document.getElementsByClassName('choreFiveClass')
+  let choreOneTotal = goalInt / choreOneInt / 7
+  let choreTwoTotal = goalInt / choreTwoInt / 7
+  let choreThreeTotal = goalInt / choreThreeInt / 7
+  let choreFourTotal = goalInt / choreFourInt / 7
+  let choreFiveTotal = goalInt / choreFiveInt / 7
 
   choreOneLabel = choreOneLabel.innerText
   choreTwoLabel = choreTwoLabel.innerText
-  choreTwoLabel = choreTwoLabel.innerText
+  choreThreeLabel = choreThreeLabel.innerText
   choreFourLabel = choreFourLabel.innerText
-  choreFiveLabel = cchoreFiveLabel.innerText
+  choreFiveLabel = choreFiveLabel.innerText
 
   /*display results as string*/
   choreOneTotal = choreOneTotal.toString()
@@ -44,6 +57,6 @@ function calcWeeks() {
 
   finalDisplayString = choreOneTotal + ' ' + '(' + choreOneLabel + ')'
 
-  displayy = document.getElementById('totalTime')
-  displayy.innerHTML = "test";
-}
+  displayy.innerHTML = ' test'
+  todaysDate.innerHTML = today
+})
