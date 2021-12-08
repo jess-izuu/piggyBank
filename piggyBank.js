@@ -1,4 +1,4 @@
-function() myFunction(){
+function() calcWeeks(){
 	/*get form input */
 	choreOneInput = document.getElementById('choreOne').value;
 	choreTwoInput = document.getElementById('choreTwo').value;
@@ -27,6 +27,5 @@ function() myFunction(){
 
 	displayy = document.getElementById('totalTime')
 	displayy.innerText =  finalDisplayString;
-	document.close();
 	
 }
