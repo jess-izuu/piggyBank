@@ -14,24 +14,45 @@ input {
   height: 50px;
 }
 
-#saveButton {
-  grid-column: 2 / 3;
+button {
+  border-radius: 20px;
+  margin-left: 950px;
 }
 
 .piggy {
-  background-image: url('https://images.unsplash.com/photo-1534951009808-766178b47a4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&h=350&q=80');
+  background-image: url('https://images.unsplash.com/photo-1633158829875-e5316a358c6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1900&h=400&q=80');
   background-size: cover;
-  width: 2000px;
+  width: 1900px;
   height: 350px;
   z-index: -1;
 }
 
-.piggy::before {
-  content: ' ';
-  position: absolute;
-  width: 2000px;
-  height: 350px;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-size: cover;
-  z-index: 1;
+.goalClass {
+  padding-left: 140px;
+}
+
+.container form {
+  font-size: 100px;
+  padding-left: 750px;
+  padding-top: 30px;
+}
+
+#goal {
+  font-size: 100px;
+  width: 200px;
+  height: 150px;
+  border-radius: 30px;
+  z-index: 2;
+  padding-left: 20px;
+}
+
+#past-plan,
+#chores {
+  padding-left: 800px;
+  padding-top: 20px;
+}
+
+.dates {
+  padding-left: 800px;
+  padding-top: 20px;
 }

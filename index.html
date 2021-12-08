@@ -14,11 +14,21 @@
   </head>
   <body>
     <!-- money background -->
-    <div class="piggy"></div>
+    <div class="piggy">
+      <!-- Goal -->
+      <div class="container">
+        <form>
+          <label class="goalClass"><i class="fas fa-trophy"></i></label>
+          <br />
+          <i class="fas fa-dollar-sign"></i>
+          <input id="goal" type="text" />
+        </form>
+      </div>
+    </div>
 
     <!-- DropDown For Saved Chores - LocalStorage -->
     <form id="past-plan">
-      <label>Choose a saved savings plan:</label>
+      <label>Choose a past savings plan:</label>
       <select id="saved-plan">
         <option value="savingsOne">05/23/2021</option>
         <option value="savingsTwo">06/10/2021</option>
@@ -28,34 +38,34 @@
       </select>
     </form>
 
-    <!-- Goal -->
-    <form id="goal">
-      <input id="goal" type="text" />
-      <label class="goalClass">My Goal</label>
-    </form>
-
     <!-- Chores List -->
     <form id="chores">
       <input id="choreOne" type="text" />
-      <label class="choreOneClass">Vacuuming</label>
+      <label class="choreOneClass">Vacuuming <strong>(per day)</strong></label>
 
       <input id="choreTwo" type="text" />
-      <label class="choreTwoClass">Dishes</label>
+      <label class="choreTwoClass">Dishes <strong>(per day)</strong></label>
 
       <input id="choreThree" type="text" />
-      <label class="choreThreeClass">Folding Clothes</label>
+      <label class="choreThreeClass"
+        >Folding Clothes <strong>(per day)</strong></label
+      >
 
       <input id="choreFour" type="text" />
-      <label class="choreFourClass">Mopping</label>
+      <label class="choreFourClass">Mopping <strong>(per day)</strong></label>
 
       <input id="choreFive" type="text" />
-      <label class="choreFiveClass">Wash Car</label>
+      <label class="choreFiveClass">Wash Car <strong>(per day)</strong></label>
     </form>
 
     <!-- Amount of time to reach goal -->
-    <h2>Today's Date: <span id="todaysDate"> </span></h2>
-    <h5>It will take<span id="totalTime"> </span> weeks to reach your goal</h5>
-    <h2>End Date: <span id="endDate"> </span></h2>
+    <div class="dates">
+      <h2>Today's Date: <span id="todaysDate"> </span></h2>
+      <h5>
+        It will take<span id="totalTime"> </span> weeks to reach your goal
+      </h5>
+      <h2>End Date: <span id="endDate"> </span></h2>
+    </div>
 
     <!-- Save button will save everything under today's date in dropdown -->
     <button id="saveButton">Save</button>
