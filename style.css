@@ -17,3 +17,21 @@ input {
 #saveButton {
   grid-column: 2 / 3;
 }
+
+.piggy {
+  background-image: url('https://images.unsplash.com/photo-1534951009808-766178b47a4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&h=350&q=80');
+  background-size: cover;
+  width: 2000px;
+  height: 350px;
+  z-index: -1;
+}
+
+.piggy::before {
+  content: ' ';
+  position: absolute;
+  width: 2000px;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  z-index: 1;
+}
