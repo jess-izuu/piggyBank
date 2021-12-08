@@ -2,12 +2,14 @@ const displayy = document.getElementById('totalTime')
 const saveButton = document.getElementById('saveButton')
 
 /*get form input */
-const choreOneInput = document.getElementById('choreOne').value
-const choreTwoInput = document.getElementById('choreTwo').value
-const choreThreeInput = document.getElementById('choreThree').value
-const choreFourInput = document.getElementById('choreFour').value
-const choreFiveInput = document.getElementById('choreFive').value
-const goalInput = document.getElementById('goal').value
+// const choreOneInput = Number(document.querySelector('.choreOne').value)
+// const choreTwoInput = document.getElementById('choreTwo').value
+// const choreThreeInput = document.getElementById('choreThree').value
+// const choreFourInput = document.getElementById('choreFour').value
+// const choreFiveInput = document.getElementById('choreFive').value
+// const goalInput = document.getElementById('goal').value
+
+//console.log(choreOneInput)
 
 /*Get label Text*/
 let choreOneLabel = document.getElementsByClassName('choreOneClass')
@@ -27,13 +29,17 @@ const endDate = document.getElementById('endDate')
 
 /*Save Button Event Listener*/
 saveButton.addEventListener('click', function () {
+  /*get form input */
   /*parse input to ints*/
-  const choreOneInt = parseInt(choreOneInput, 10)
-  const choreTwoInt = parseInt(choreTwoInput, 10)
-  const choreThreeInt = parseInt(choreThreeInput, 10)
-  const choreFourInt = parseInt(choreFourInput, 10)
-  const choreFiveInt = parseInt(choreFiveInput, 10)
-  const goalInt = parseInt(goalInput, 10)
+  const choreOneInt = parseInt(document.getElementById('choreOne').value, 10)
+  const choreTwoInt = parseInt(document.getElementById('choreTwo').value, 10)
+  const choreThreeInt = parseInt(
+    document.getElementById('choreThree').value,
+    10
+  )
+  const choreFourInt = parseInt(document.getElementById('choreFour').value, 10)
+  const choreFiveInt = parseInt(document.getElementById('choreFive').value, 10)
+  const goalInt = parseInt(document.getElementById('goal').value, 10)
 
   /*calculate hours based on goal*/
   let choreOneTotal = goalInt / choreOneInt / 7
@@ -42,11 +48,11 @@ saveButton.addEventListener('click', function () {
   let choreFourTotal = goalInt / choreFourInt / 7
   let choreFiveTotal = goalInt / choreFiveInt / 7
 
-  choreOneLabel = choreOneLabel.innerText
-  choreTwoLabel = choreTwoLabel.innerText
-  choreThreeLabel = choreThreeLabel.innerText
-  choreFourLabel = choreFourLabel.innerText
-  choreFiveLabel = choreFiveLabel.innerText
+  choreOneLabel.innerText = choreOneLabel
+  choreTwoLabel.innerText = choreTwoLabel
+  choreThreeLabel.innerText = choreThreeLabel
+  choreFourLabel.innerText = choreFourLabel
+  choreFiveLabel.innerText = choreFiveLabel
 
   /*display results as string*/
   choreOneTotal = choreOneTotal.toString()
@@ -55,13 +61,18 @@ saveButton.addEventListener('click', function () {
   choreFourTotal = choreFourTotal.toString()
   choreFiveTotal = choreFiveTotal.toString()
 
-  let choreOneResults = choreOneTotal + " - "+ "(Vacumming)" + "\n";
-  let choreTwoResults = choreTwoTotal + " - "+ "(Dishes)" + "\n";
-  let choreThreeResults = choreThreeTotal + " - "+ "(Folding Clothes)" + "\n";
-  let choreFourResults = choreFourTotal + " - "+ "(Mopping)" + "\n";
-  let choreFiveResults = choreFiveTotal + " - "+ "(Wash Car)" + "\n";
+  let choreOneResults = choreOneTotal + ' - ' + '(Vacumming)' + '\n'
+  let choreTwoResults = choreTwoTotal + ' - ' + '(Dishes)' + '\n'
+  let choreThreeResults = choreThreeTotal + ' - ' + '(Folding Clothes)' + '\n'
+  let choreFourResults = choreFourTotal + ' - ' + '(Mopping)' + '\n'
+  let choreFiveResults = choreFiveTotal + ' - ' + '(Wash Car)' + '\n'
 
-  let finalDisplayString = choreOneResults + choreTwoResults + choreThreeResults + choreFourResults+ choreFiveResults;
+  let finalDisplayString =
+    choreOneResults +
+    choreTwoResults +
+    choreThreeResults +
+    choreFourResults +
+    choreFiveResults
 
   displayy.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
