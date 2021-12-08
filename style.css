@@ -15,6 +15,5 @@ input {
 }
 
 button {
-  float: right;
-  width: calc(100% - 200px);
+  grid-column: 2 / 3;
 }
