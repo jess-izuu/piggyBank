@@ -55,7 +55,13 @@ saveButton.addEventListener('click', function () {
   choreFourTotal = choreFourTotal.toString()
   choreFiveTotal = choreFiveTotal.toString()
 
-  finalDisplayString = choreOneTotal + ' ' + '(' + choreOneLabel + ')'
+  let choreOneResults = choreOneTotal + " - "+ "(Vacumming)" + "\n";
+  let choreTwoResults = choreTwoTotal + " - "+ "(Dishes)" + "\n";
+  let choreThreeResults = choreThreeTotal + " - "+ "(Folding Clothes)" + "\n";
+  let choreFourResults = choreFourTotal + " - "+ "(Mopping)" + "\n";
+  let choreFiveResults = choreFiveTotal + " - "+ "(Wash Car)" + "\n";
+
+  let finalDisplayString = choreOneResults + choreTwoResults + choreThreeResults + choreFourResults+ choreFiveResults;
 
   displayy.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
