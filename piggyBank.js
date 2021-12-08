@@ -57,6 +57,6 @@ saveButton.addEventListener('click', function () {
 
   finalDisplayString = choreOneTotal + ' ' + '(' + choreOneLabel + ')'
 
-  displayy.innerHTML = ' test'
+  displayy.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
 })
