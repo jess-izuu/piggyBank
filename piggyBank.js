@@ -17,11 +17,31 @@ function() calcWeeks(){
 
 	/*calculate hours based on goal*/
 	choreOneTotal = (goalInt / choreOneInt)/7;
+	choreTwoTotal = (goalInt / choreTwoInt)/7;
+	choreThreeTotal = (goalInt / choreThreeInt)/7;
+	choreFourTotal = (goalInt / choreFourInt)/7;
+	choreFiveTotal = (goalInt / choreFiveInt)/7;
+
 	/*Get label Text*/
-	choreOneLabel =  document.getElementsByClassName("choreOneClass")
+	choreOneLabel =  document.getElementsByClassName("choreOneClass");
+	choreTwoLabel =  document.getElementsByClassName("choreTwoClass");
+	choreTwoLabel =  document.getElementsByClassName("choreThreeClass");
+	choreFourLabel =  document.getElementsByClassName("choreFourClass");
+	choreFiveLabel =  document.getElementsByClassName("choreFiveClass");
+
 	choreOneLabel = choreOneLabel.innerText;
+	choreTwoLabel = choreTwoLabel.innerText;
+	choreTwoLabel = choreTwoLabel.innerText;
+	choreFourLabel = choreFourLabel.innerText;
+	choreFiveLabel = cchoreFiveLabel.innerText;
+
 	/*display results as string*/
 	choreOneTotal = choreOneTotal.toString();
+	choreTwoTotal = choreTwoTotal.toString();
+	choreThreeTotal = choreThreeTotal.toString();
+	choreFourTotal = choreFourTotal.toString();
+	choreFiveTotal = choreFiveTotal.toString();
+
 	finalDisplayString = choreOneTotal + " " + "(" + choreOneLabel + ")";
 
 
