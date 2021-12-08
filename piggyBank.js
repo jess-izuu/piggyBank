@@ -46,6 +46,6 @@ function() calcWeeks(){
 
 
 	displayy = document.getElementById('totalTime')
-	displayy.innerText =  finalDisplayString;
+	displayy.innerText = "test";
 	
 }
