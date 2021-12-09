@@ -42,7 +42,8 @@ saveButton.addEventListener('click', function () {
   const choreFiveInt = parseInt(document.getElementById('choreFive').value, 10)
   const goalInt = parseInt(document.getElementById('goal').value, 10)
   /* input validation */
-  if(inputVerify(choreOneInt,choreTwoInt,choreThreeInt,choreFourInt,choreFiveInt,goalInt)){
+  if(inputVerify(choreOneInt,choreTwoInt,choreThreeInt,choreFourInt,choreFiveInt,goalInt) == true){
+    alert("Success")
 
   }
   else{
