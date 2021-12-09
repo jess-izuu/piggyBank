@@ -90,4 +90,31 @@ saveButton.addEventListener('click', function () {
   displayy.innerHTML = 'test'
   displayyList.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
+
+  // LocalStorage - Save
+  // Save goal input
+  localStorage.setItem('goal', JSON.stringify(goalInt))
+  // Save chores inputs
+  localStorage.setItem('choreOne', JSON.stringify(choreOneInt))
+  localStorage.setItem('choreTwo', JSON.stringify(choreTwoInt))
+  localStorage.setItem('choreThree', JSON.stringify(choreThreeInt))
+  localStorage.setItem('choreFour', JSON.stringify(choreFourInt))
+  localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
+
+//LocalStorage - Get saved items
+const goalAmount = JSON.parse(localStorage.getItem('goal'))
+const choreOneAmount = JSON.parse(localStorage.getItem('choreOne'))
+const choreTwoAmount = JSON.parse(localStorage.getItem('choreTwo'))
+const choreThreeAmount = JSON.parse(localStorage.getItem('choreThree'))
+const choreFourAmount = JSON.parse(localStorage.getItem('choreFour'))
+const choreFiveAmount = JSON.parse(localStorage.getItem('choreFive'))
+console.log(today)
+console.log(goalAmount)
+console.log(choreOneAmount)
+console.log(choreTwoAmount)
+console.log(choreThreeAmount)
+console.log(choreFourAmount)
+console.log(choreFiveAmount)
+
+//Add stored data to date in dropdown
