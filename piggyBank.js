@@ -44,7 +44,7 @@ saveButton.addEventListener('click', function () {
 
   }
   else{
-    alert("Error,a negative number was entered.Please try again.")
+    alert("Error,a negative number was entered(or blank field).Please try again.")
     return;
   }
 
