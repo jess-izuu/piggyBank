@@ -96,9 +96,10 @@ saveButton.addEventListener('click', function () {
     `<br>` +
     choreFiveResults
 
-  displayy.innerHTML = minDate.toLocaleDateString("en-US")
+  displayy.innerHTML = Math.min(choreOneTotal,choreTwoTotal,choreThreeTotal,choreFourTotal,choreFiveTotal)
   displayyList.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
+  endDate.innerHTML = minDate.toLocaleDateString("en-US")
 
   // LocalStorage - Save
   // Save goal input
