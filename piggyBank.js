@@ -71,11 +71,11 @@ saveButton.addEventListener('click', function () {
   }
 
   /*calculate hours based on goal*/
-  let choreOneTotal = goalInt / choreOneInt
-  let choreTwoTotal = goalInt / choreTwoInt
-  let choreThreeTotal = goalInt / choreThreeInt
-  let choreFourTotal = goalInt / choreFourInt
-  let choreFiveTotal = goalInt / choreFiveInt
+  let choreOneTotal = Math.round(goalInt / choreOneInt)
+  let choreTwoTotal = Math.round(goalInt / choreTwoInt)
+  let choreThreeTotal = Math.round(goalInt / choreThreeInt)
+  let choreFourTotal = Math.round(goalInt / choreFourInt)
+  let choreFiveTotal = Math.round(goalInt / choreFiveInt)
 
   /*Find end date*/
   let minDate = determineEndDate(
@@ -95,26 +95,29 @@ saveButton.addEventListener('click', function () {
 
   let choreOneResults =
     choreOneTotal +
-    ' - ' +
-    '<i class="fas fa-broom"></i> week(s) Vacumming' +
+    ' - week(s) ' +
+    '<i class="fas fa-broom"></i> Vacumming' +
     '\n'
   let choreTwoResults =
     choreTwoTotal +
-    ' - ' +
-    '<i class="fas fa-utensils"></i>week(s) Dishes' +
+    ' - week(s) ' +
+    '<i class="fas fa-utensils"></i> Dishes' +
     '\n'
   let choreThreeResults =
     choreThreeTotal +
-    ' - ' +
-    '<i class="fas fa-tshirt"></i>week(s) Folding Clothes' +
+    ' - week(s) ' +
+    '<i class="fas fa-tshirt"></i> Folding Clothes' +
     '\n'
   let choreFourResults =
     choreFourTotal +
-    ' - ' +
-    '<i class="fas fa-broom"></i>week(s) Mopping' +
+    ' - week(s) ' +
+    '<i class="fas fa-broom"></i> Mopping' +
     '\n'
   let choreFiveResults =
-    choreFiveTotal + ' - ' + '<i class="fas fa-car"></i>week(s) Wash Car' + '\n'
+    choreFiveTotal +
+    ' - week(s) ' +
+    '<i class="fas fa-car"></i> Washing Car' +
+    '\n'
 
   let finalDisplayString =
     choreOneResults +
@@ -262,34 +265,46 @@ function displayPastPlan() {
   h1_goal.innerHTML = goalPast
   newDiv.appendChild(h1_goal)
 
-  let h1_income = document.createElement('h1')
-  h1_income.innerHTML = 'Income:' + '<br>' + pastDisplayString
+  let h3_income = document.createElement('h3')
+  h3_income.innerHTML = 'Income:' + '<br>' + pastDisplayString
   pastPlan.appendChild(newDiv)
-  newDiv.appendChild(h1_income)
+  newDiv.appendChild(h3_income)
 
   let h1_totalWks = document.createElement('h1')
-  h1_totalWks.innerHTML = 'Total Weeks: ' + totalWeeks + ' weeks'
+  h1_totalWks.innerHTML = 'Minimum # Weeks: ' + totalWeeks + ' weeks'
+  h1_totalWks.style.color = 'blue'
   pastPlan.appendChild(newDiv)
   newDiv.appendChild(h1_totalWks)
 
-  let h1_breakdown = document.createElement('h1')
-  h1_breakdown.innerHTML =
+  let h3_breakdown = document.createElement('h3')
+  h3_breakdown.innerHTML =
     'Breakdown: ' +
     '<br>' +
-    choreOneTot +
+    Math.round(choreOneTot) +
+    ' - week(s) ' +
+    '<i class="fas fa-broom"></i> Vacumming' +
     '<br>' +
-    choreTwoTot +
+    Math.round(choreTwoTot) +
+    ' - week(s) ' +
+    '<i class="fas fa-utensils"></i> Dishes' +
     '<br>' +
-    choreThreeTot +
+    Math.round(choreThreeTot) +
+    ' - week(s) ' +
+    '<i class="fas fa-tshirt"></i> Folding Clothes' +
     '<br>' +
-    choreFourTot +
+    Math.round(choreFourTot) +
+    ' - week(s) ' +
+    '<i class="fas fa-broom"></i> Mopping' +
     '<br>' +
-    choreFiveTot
+    Math.round(choreFiveTot) +
+    ' - week(s) ' +
+    '<i class="fas fa-car"></i> Washing Car'
   pastPlan.appendChild(newDiv)
-  newDiv.appendChild(h1_breakdown)
+  newDiv.appendChild(h3_breakdown)
 
   let h1_endDate = document.createElement('h1')
   h1_endDate.innerHTML = 'End Date: ' + endDateVal
+  h1_endDate.style.color = 'red'
   pastPlan.appendChild(newDiv)
   newDiv.appendChild(h1_endDate)
 }
