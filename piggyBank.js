@@ -154,8 +154,12 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('totalWks', JSON.stringify(totalWeeks))
   // Save End Date
   localStorage.setItem('endDateVal', JSON.stringify(endDateValue))
-  // Save finalDisplayString
-  localStorage.setItem('breakdown', JSON.stringify(finalDisplayString))
+  // Save calc chore totals
+  localStorage.setItem('choreOneTotal', JSON.stringify(choreOneTotal))
+  localStorage.setItem('choreTwoTotal', JSON.stringify(choreTwoTotal))
+  localStorage.setItem('choreThreeTotal', JSON.stringify(choreThreeTotal))
+  localStorage.setItem('choreFourTotal', JSON.stringify(choreFourTotal))
+  localStorage.setItem('choreFiveTotal', JSON.stringify(choreFiveTotal))
 })
 
 // Verify Input
@@ -192,7 +196,11 @@ const choreFourAmount = JSON.parse(localStorage.getItem('choreFour'))
 const choreFiveAmount = JSON.parse(localStorage.getItem('choreFive'))
 const totalWeeks = JSON.parse(localStorage.getItem('totalWks'))
 const endDateVal = JSON.parse(localStorage.getItem('endDateVal'))
-const breakdown = JSON.parse(localStorage.getItem('breakdown'))
+const choreOneTot = JSON.parse(localStorage.getItem('choreOneTotal'))
+const choreTwoTot = JSON.parse(localStorage.getItem('choreTwoTotal'))
+const choreThreeTot = JSON.parse(localStorage.getItem('choreThreeTotal'))
+const choreFourTot = JSON.parse(localStorage.getItem('choreFourTotal'))
+const choreFiveTot = JSON.parse(localStorage.getItem('choreFiveTotal'))
 
 //Display stored data on dropdown click
 const pastPlan = document.getElementById('past-planOutput')
@@ -260,18 +268,28 @@ function displayPastPlan() {
   newDiv.appendChild(h1_income)
 
   let h1_totalWks = document.createElement('h1')
-  h1_totalWks.textContent = 'Total Weeks: ' + totalWeeks + ' weeks'
+  h1_totalWks.innerHTML = 'Total Weeks: ' + totalWeeks + ' weeks'
   pastPlan.appendChild(newDiv)
   newDiv.appendChild(h1_totalWks)
 
   let h1_breakdown = document.createElement('h1')
-  h1_breakdown.textContent = 'Breakdown: '
-  console.log(breakdown)
+  h1_breakdown.innerHTML =
+    'Breakdown: ' +
+    '<br>' +
+    choreOneTot +
+    '<br>' +
+    choreTwoTot +
+    '<br>' +
+    choreThreeTot +
+    '<br>' +
+    choreFourTot +
+    '<br>' +
+    choreFiveTot
   pastPlan.appendChild(newDiv)
   newDiv.appendChild(h1_breakdown)
 
   let h1_endDate = document.createElement('h1')
-  h1_endDate.textContent = 'End Date: ' + endDateVal
+  h1_endDate.innerHTML = 'End Date: ' + endDateVal
   pastPlan.appendChild(newDiv)
   newDiv.appendChild(h1_endDate)
 }
