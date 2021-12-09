@@ -44,7 +44,7 @@ saveButton.addEventListener('click', function () {
 
   }
   else{
-    alert("Error, either a negative number was entered, or a non-numerical input was entered. Please try again.")
+    alert("Error,a negative number was entered.Please try again.")
     return;
   }
 
@@ -108,19 +108,6 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
 function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
-    if(isNaN(choreOne)){
-      return false;
-    }else if(isNaN(choreTwo)){
-      return false
-    }else if(isNaN(goal)){
-      return false
-    }else if(isNaN(choreThree)){
-      return false
-    }else if(isNaN(choreFour)){
-      return false
-    }else if(isNaN(choreFive)){
-      return false
-    }
     if(choreOne < 0){
       return false
     }else if(choreTwo < 0){
