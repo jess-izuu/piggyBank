@@ -29,6 +29,14 @@ const todaysDate = document.getElementById('todaysDate')
 const endDate = document.getElementById('endDate')
 /*Save Button Event Listener*/
 saveButton.addEventListener('click', function () {
+  function determineEndDate(choreOne,choreTwo,choreThree,choreFour,choreFive){
+    var minWeeks = Math.min(choreOne,choreTwo,choreThree,choreFour,choreFive);
+    var today = new Date();
+    var minDays = minWeeks * 7;
+    today.setDate(today.getDate()+ minDays);
+    return today;
+
+}
   /*get form input */
   /*parse input to ints*/
   const choreOneInt = parseInt(document.getElementById('choreOne').value, 10)
@@ -88,7 +96,7 @@ saveButton.addEventListener('click', function () {
     `<br>` +
     choreFiveResults
 
-  displayy.innerHTML = minDate
+  displayy.innerHTML = minDate.toLocaleDateString("en-US")
   displayyList.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
 
@@ -118,14 +126,7 @@ function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
     }
     return true
 }
-function determineEndDate(choreOne,choreTwo,choreThree,choreFour,choreFive){
-  var minWeeks = Math.min(choreOne,choreTwo,choreThree,choreFour,choreFive);
-  var today = new Date();
-  var minDays = minWeeks * 7;
-  today.setDate(today.getDate()+ minDays);
-  return today;
 
-}
 
 //LocalStorage - Get saved items
 const goalAmount = JSON.parse(localStorage.getItem('goal'))
