@@ -31,9 +31,20 @@ h4 {
   margin-left: 800px;
 }
 
+h5 {
+  font-size: 30px;
+  margin-top: 0px;
+  color: blue;
+}
+
 h6 {
   font-size: 20px;
   margin-left: 950px;
+}
+
+h7 {
+  font-size: 20px;
+  color: black;
 }
 
 label {
