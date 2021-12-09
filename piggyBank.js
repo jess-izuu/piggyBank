@@ -108,17 +108,17 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
 function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
-    if(isNan(choreOne)){
+    if(isNaN(choreOne)){
       return false;
-    }else if(isNan(choreTwo)){
+    }else if(isNaN(choreTwo)){
       return false
-    }else if(isNan(goal)){
+    }else if(isNaN(goal)){
       return false
-    }else if(isNan(choreThree)){
+    }else if(isNaN(choreThree)){
       return false
-    }else if(isNan(choreFour)){
+    }else if(isNaN(choreFour)){
       return false
-    }else if(isNan(choreFive)){
+    }else if(isNaN(choreFive)){
       return false
     }
     if(choreOne < 0){
