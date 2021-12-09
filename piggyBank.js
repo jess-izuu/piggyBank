@@ -27,7 +27,6 @@ var yyyy = today.getFullYear()
 today = mm + '/' + dd + '/' + yyyy
 const todaysDate = document.getElementById('todaysDate')
 const endDate = document.getElementById('endDate')
-
 /*Save Button Event Listener*/
 saveButton.addEventListener('click', function () {
   /*get form input */
@@ -44,7 +43,7 @@ saveButton.addEventListener('click', function () {
 
   }
   else{
-    alert("Error, either a negative number was entered, or a non-numerical input was entered. Please try again.")
+    alert("Error,a negative number was entered(or blank field).Please try again.")
     return;
   }
 
@@ -55,12 +54,8 @@ saveButton.addEventListener('click', function () {
   let choreFourTotal = goalInt / choreFourInt
   let choreFiveTotal = goalInt / choreFiveInt
 
-  // choreOneLabel.innerText = choreOneLabel
-  // choreTwoLabel.innerText = choreTwoLabel
-  // choreThreeLabel.innerText = choreThreeLabel
-  // choreFourLabel.innerText = choreFourLabel
-  // choreFiveLabel.innerText = choreFiveLabel
-
+ /*Find end date*/
+  let minDate = determineEndDate(choreOneTotal,choreTwoTotal,choreThreeTotal,choreFourTotal,choreFiveTotal);
   /*display results as string*/
   choreOneTotal = choreOneTotal.toString()
   choreTwoTotal = choreTwoTotal.toString()
@@ -69,18 +64,22 @@ saveButton.addEventListener('click', function () {
   choreFiveTotal = choreFiveTotal.toString()
 
   let choreOneResults =
-    choreOneTotal + ' - ' + '<i class="fas fa-broom"></i> Vacumming' + '\n'
+    choreOneTotal + ' - ' + '<i class="fas fa-broom"></i> week(s) Vacumming' + '\n'
   let choreTwoResults =
-    choreTwoTotal + ' - ' + '<i class="fas fa-utensils"></i> Dishes' + '\n'
+    choreTwoTotal + ' - ' + '<i class="fas fa-utensils"></i>week(s) Dishes' + '\n'
   let choreThreeResults =
     choreThreeTotal +
     ' - ' +
-    '<i class="fas fa-tshirt"></i> Folding Clothes' +
+    '<i class="fas fa-tshirt"></i>week(s) Folding Clothes' +
     '\n'
   let choreFourResults =
-    choreFourTotal + ' - ' + '<i class="fas fa-broom"></i> Mopping' + '\n'
+    choreFourTotal + ' - ' + '<i class="fas fa-broom"></i>week(s) Mopping' + '\n'
   let choreFiveResults =
+<<<<<<< HEAD
     choreFiveTotal + ' - ' + '<i class="fas fa-car"></i> Washing Car' + '\n'
+=======
+    choreFiveTotal + ' - ' + '<i class="fas fa-car"></i>week(s) Wash Car' + '\n'
+>>>>>>> fff780767ffb75f9379c3bee05811bf4af91ec50
 
   let finalDisplayString =
     choreOneResults +
@@ -93,7 +92,7 @@ saveButton.addEventListener('click', function () {
     `<br>` +
     choreFiveResults
 
-  displayy.innerHTML = 'test'
+  displayy.innerHTML = minDate
   displayyList.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
 
@@ -108,33 +107,28 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
 function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
-    if(isNan(choreOne)){
-      return false;
-    }else if(isNan(choreTwo)){
+    if(choreOne < 0 || !/^\d+(\.\d+)?/.exec(choreOne)){
       return false
-    }else if(isNan(goal)){
+    }else if(choreTwo < 0 || !/^\d+(\.\d+)?/.exec(choreTwo)){
       return false
-    }else if(isNan(choreThree)){
+    }else if(choreThree< 0 || !/^\d+(\.\d+)?/.exec(choreThree)){
       return false
-    }else if(isNan(choreFour)){
+    }else if(choreFour < 0 || !/^\d+(\.\d+)?/.exec(choreFour)){
       return false
-    }else if(isNan(choreFive)){
+    }else if(choreFive < 0 || !/^\d+(\.\d+)?/.exec(choreFive)){
       return false
-    }
-    if(choreOne < 0){
-      return false
-    }else if(choreTwo < 0){
-      return false
-    }else if(choreThree< 0){
-      return false
-    }else if(choreFour < 0){
-      return false
-    }else if(choreFive < 0){
-      return false
-    }else if(goal < 0){
+    }else if(goal < 0 || !/^\d+(\.\d+)?/.exec(goal)){
       return false
     }
     return true
+}
+function determineEndDate(choreOne,choreTwo,choreThree,choreFour,choreFive){
+  var minWeeks = Math.min(choreOne,choreTwo,choreThree,choreFour,choreFive);
+  var today = new Date();
+  var minDays = minWeeks * 7;
+  today.setDate(today.getDate()+ minDays);
+  return today;
+
 }
 
 //LocalStorage - Get saved items
