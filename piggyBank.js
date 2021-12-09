@@ -108,7 +108,6 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
 function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
-    alert("We have entered the inputVerify function")
     if(isNan(choreOne)){
       return false;
     }else if(isNan(choreTwo)){
