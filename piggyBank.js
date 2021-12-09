@@ -29,6 +29,7 @@ const todaysDate = document.getElementById('todaysDate')
 const endDate = document.getElementById('endDate')
 /*Save Button Event Listener*/
 saveButton.addEventListener('click', function () {
+  /*define function to determine end date*/
   function determineEndDate(choreOne,choreTwo,choreThree,choreFour,choreFive){
     var minWeeks = Math.min(choreOne,choreTwo,choreThree,choreFour,choreFive);
     var today = new Date();
@@ -70,6 +71,7 @@ saveButton.addEventListener('click', function () {
   choreThreeTotal = choreThreeTotal.toString()
   choreFourTotal = choreFourTotal.toString()
   choreFiveTotal = choreFiveTotal.toString()
+  /*format and display results*/
 
   let choreOneResults =
     choreOneTotal + ' - ' + '<i class="fas fa-broom"></i> week(s) Vacumming' + '\n'
