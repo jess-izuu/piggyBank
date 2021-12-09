@@ -43,11 +43,11 @@ saveButton.addEventListener('click', function () {
   const goalInt = parseInt(document.getElementById('goal').value, 10)
 
   /*calculate hours based on goal*/
-  let choreOneTotal = goalInt / choreOneInt / 7
-  let choreTwoTotal = goalInt / choreTwoInt / 7
-  let choreThreeTotal = goalInt / choreThreeInt / 7
-  let choreFourTotal = goalInt / choreFourInt / 7
-  let choreFiveTotal = goalInt / choreFiveInt / 7
+  let choreOneTotal = goalInt / choreOneInt
+  let choreTwoTotal = goalInt / choreTwoInt
+  let choreThreeTotal = goalInt / choreThreeInt
+  let choreFourTotal = goalInt / choreFourInt
+  let choreFiveTotal = goalInt / choreFiveInt
 
   // choreOneLabel.innerText = choreOneLabel
   // choreTwoLabel.innerText = choreTwoLabel
