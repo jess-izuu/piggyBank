@@ -108,7 +108,7 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
 function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
-    if(choreOne < 0 || choreOne == ""){
+    if(choreOne < 0 || isNaN(choreOne)){
       return false
     }else if(choreTwo < 0){
       return false
