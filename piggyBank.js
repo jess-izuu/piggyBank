@@ -74,7 +74,7 @@ saveButton.addEventListener('click', function () {
   let choreFourResults =
     choreFourTotal + ' - ' + '<i class="fas fa-broom"></i> Mopping' + '\n'
   let choreFiveResults =
-    choreFiveTotal + ' - ' + '<i class="fas fa-car"></i> Wash Car' + '\n'
+    choreFiveTotal + ' - ' + '<i class="fas fa-car"></i> Washing Car' + '\n'
 
   let finalDisplayString =
     choreOneResults +
@@ -109,12 +109,78 @@ const choreTwoAmount = JSON.parse(localStorage.getItem('choreTwo'))
 const choreThreeAmount = JSON.parse(localStorage.getItem('choreThree'))
 const choreFourAmount = JSON.parse(localStorage.getItem('choreFour'))
 const choreFiveAmount = JSON.parse(localStorage.getItem('choreFive'))
-console.log(today)
-console.log(goalAmount)
-console.log(choreOneAmount)
-console.log(choreTwoAmount)
-console.log(choreThreeAmount)
-console.log(choreFourAmount)
-console.log(choreFiveAmount)
 
-//Add stored data to date in dropdown
+//Display stored data on dropdown click
+const pastPlan = document.getElementById('past-planOutput')
+
+function displayPastPlan() {
+  console.log(this.value)
+  var newDiv = document.createElement('div')
+  let h1_startDate = document.createElement('h1')
+  h1_startDate.textContent = 'Start Date:' + today
+  pastPlan.appendChild(newDiv)
+  newDiv.appendChild(h1_startDate)
+
+  let h1_totalWks = document.createElement('h1')
+  h1_totalWks.textContent = 'Total Weeks:'
+  pastPlan.appendChild(newDiv)
+  newDiv.appendChild(h1_totalWks)
+
+  let goalPast =
+    '$' + goalAmount + ' - ' + '<i class="fas fa-trophy"></i> Goal' + '\n'
+  let choreOnePast =
+    '$' +
+    choreOneAmount +
+    '/wk - ' +
+    '<i class="fas fa-broom"></i> Vacumming' +
+    '\n'
+  let choreTwoPast =
+    '$' +
+    choreTwoAmount +
+    '/wk - ' +
+    '<i class="fas fa-utensils"></i> Dishes' +
+    '\n'
+  let choreThreePast =
+    '$' +
+    choreThreeAmount +
+    '/wk - ' +
+    '<i class="fas fa-tshirt"></i> Folding Clothes' +
+    '\n'
+  let choreFourPast =
+    '$' +
+    choreFourAmount +
+    '/wk - ' +
+    '<i class="fas fa-broom"></i> Mopping' +
+    '\n'
+  let choreFivePast =
+    '$' +
+    choreFiveAmount +
+    '/wk - ' +
+    '<i class="fas fa-car"></i> Washing Car' +
+    '\n'
+
+  let pastDisplayString =
+    goalPast +
+    '<br>' +
+    choreOnePast +
+    `<br>` +
+    choreTwoPast +
+    `<br>` +
+    choreThreePast +
+    `<br>` +
+    choreFourPast +
+    `<br>` +
+    choreFivePast
+
+  let h1_breakDown = document.createElement('h1')
+  h1_breakDown.innerHTML = 'Breakdown:' + '<br>' + pastDisplayString
+  pastPlan.appendChild(newDiv)
+  newDiv.appendChild(h1_breakDown)
+
+  let h1_endDate = document.createElement('h1')
+  h1_endDate.textContent = 'End Date:'
+  pastPlan.appendChild(newDiv)
+  newDiv.appendChild(h1_endDate)
+}
+
+document.getElementById('saved-plan').onchange = displayPastPlan
