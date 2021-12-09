@@ -45,7 +45,7 @@ saveButton.addEventListener('click', function () {
   }
   else{
     alert("Error, either a negative number was entered, or a non-numerical input was entered. Please try again.")
-    break;
+    return;
   }
 
   /*calculate hours based on goal*/
