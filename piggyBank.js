@@ -110,15 +110,15 @@ saveButton.addEventListener('click', function () {
 function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
     if(choreOne < 0 || !/^\d+(\.\d+)?/.exec(choreOne)){
       return false
-    }else if(choreTwo < 0){
+    }else if(choreTwo < 0 || !/^\d+(\.\d+)?/.exec(choreTwo)){
       return false
-    }else if(choreThree< 0){
+    }else if(choreThree< 0 || !/^\d+(\.\d+)?/.exec(choreThree)){
       return false
-    }else if(choreFour < 0){
+    }else if(choreFour < 0 || !/^\d+(\.\d+)?/.exec(choreFour)){
       return false
-    }else if(choreFive < 0){
+    }else if(choreFive < 0 || !/^\d+(\.\d+)?/.exec(choreFive)){
       return false
-    }else if(goal < 0){
+    }else if(goal < 0 || !/^\d+(\.\d+)?/.exec(goal)){
       return false
     }
     return true
