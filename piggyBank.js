@@ -34,13 +34,11 @@ saveButton.addEventListener('click', function () {
   /*parse input to ints*/
   const choreOneInt = parseInt(document.getElementById('choreOne').value, 10)
   const choreTwoInt = parseInt(document.getElementById('choreTwo').value, 10)
-  const choreThreeInt = parseInt(
-    document.getElementById('choreThree').value,
-    10
-  )
+  const choreThreeInt = parseInt(document.getElementById('choreThree').value,10)
   const choreFourInt = parseInt(document.getElementById('choreFour').value, 10)
   const choreFiveInt = parseInt(document.getElementById('choreFive').value, 10)
   const goalInt = parseInt(document.getElementById('goal').value, 10)
+  alert("We have parsed the int")
   function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
     alert("We have entered the inputVerify function")
     if(isNan(choreOne)){
