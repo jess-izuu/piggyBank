@@ -32,70 +32,76 @@
     </div>
 
     <!-- DropDown For Saved Chores - LocalStorage -->
-    <form id="past-plan">
-      <h2>Choose a past savings plan:</h2>
-      <label></label>
-      <select id="saved-plan">
-        <option value="savingsOne">05/23/2021</option>
-        <option value="savingsTwo">06/10/2021</option>
-        <option value="savingsThree">07/15/2021</option>
-        <option value="savingsFour">09/13/2021</option>
-        <option value="savingsFive">11/11/2021</option>
-      </select>
-    </form>
-
-    <h6>------Or-------</h6>
-    <h4>Calculate a New Plan</h4>
-    <!-- Chores List -->
-    <form id="chores">
-      <input id="choreOne" type="number" />
-      <label class="choreOneClass"
-        ><i class="fas fa-broom"></i> Vacuum <strong>($ per day)</strong></label
-      >
-      <br />
-
-      <input id="choreTwo" type="number" />
-      <label class="choreTwoClass"
-        ><i class="fas fa-utensils"></i> Dishes
-        <strong>($ per day)</strong></label
-      >
-      <br />
-
-      <input id="choreThree" type="number" />
-      <label class="choreThreeClass"
-        ><i class="fas fa-tshirt"></i> Fold Clothes
-        <strong>($ per day)</strong></label
-      >
-      <br />
-
-      <input id="choreFour" type="number" />
-      <label class="choreFourClass"
-        ><i class="fas fa-broom"></i> Mop Bathroom
-        <strong>($ per day)</strong></label
-      >
-      <br />
-
-      <input id="choreFive" type="number" />
-      <label class="choreFiveClass"
-        ><i class="fas fa-car"></i> Wash Car <strong>($ per day)</strong></label
-      >
-    </form>
-
-    <!-- Amount of time to reach goal -->
-    <div class="dates">
-      <h2>Today's Date: <span id="todaysDate"> </span></h2>
-      <h5>
-        It will take <strong><span id="totalTime"> </span></strong> weeks to
-        reach your goal.
-        <br />
-        <h5>Breakdown:</h5>
-        <span id="totalTimeList"></span>
-      </h5>
-      <h2>End Date: <span id="endDate"> </span></h2>
+    <div class="dropdown">
+      <form id="past-plan">
+        <h2>Choose a past savings plan:</h2>
+        <label></label>
+        <select id="saved-plan">
+          <option value="savingsOne">05/23/2021</option>
+          <option value="savingsTwo">06/10/2021</option>
+          <option value="savingsThree">07/15/2021</option>
+          <option value="savingsFour">09/13/2021</option>
+          <option value="savingsFive">11/11/2021</option>
+        </select>
+      </form>
     </div>
+    <!-- 
+    <h6>------Or-------</h6> -->
+    <div class="newPlan">
+      <h4>Calculate a New Plan</h4>
+      <!-- Chores List -->
+      <form id="chores">
+        <input id="choreOne" type="number" />
+        <label class="choreOneClass"
+          ><i class="fas fa-broom"></i> Vacuum
+          <strong>($ per day)</strong></label
+        >
+        <br />
 
-    <!-- Save button will save everything under today's date in dropdown -->
-    <button id="saveButton">Save</button>
+        <input id="choreTwo" type="number" />
+        <label class="choreTwoClass"
+          ><i class="fas fa-utensils"></i> Dishes
+          <strong>($ per day)</strong></label
+        >
+        <br />
+
+        <input id="choreThree" type="number" />
+        <label class="choreThreeClass"
+          ><i class="fas fa-tshirt"></i> Fold Clothes
+          <strong>($ per day)</strong></label
+        >
+        <br />
+
+        <input id="choreFour" type="number" />
+        <label class="choreFourClass"
+          ><i class="fas fa-broom"></i> Mop Bathroom
+          <strong>($ per day)</strong></label
+        >
+        <br />
+
+        <input id="choreFive" type="number" />
+        <label class="choreFiveClass"
+          ><i class="fas fa-car"></i> Wash Car
+          <strong>($ per day)</strong></label
+        >
+      </form>
+
+      <!-- Amount of time to reach goal -->
+      <div class="dates">
+        <h2>Today's Date: <span id="todaysDate"> </span></h2>
+        <h5>
+          It will take <strong><span id="totalTime"> </span></strong> weeks to
+          reach your goal.
+          <br />
+          <h5>Breakdown:</h5>
+          <span id="totalTimeList"></span>
+        </h5>
+        <h2>End Date: <span id="endDate"> </span></h2>
+      </div>
+
+      <!-- Save button will save everything under today's date in dropdown -->
+      <button id="saveButton">Save</button>
+    </div>
   </body>
   <script src="piggyBank.js"></script>
 </html>
