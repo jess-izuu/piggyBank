@@ -69,18 +69,18 @@ saveButton.addEventListener('click', function () {
   choreFiveTotal = choreFiveTotal.toString()
 
   let choreOneResults =
-    choreOneTotal + ' - ' + '<i class="fas fa-broom"></i> Vacumming' + '\n'
+    choreOneTotal + ' - ' + '<i class="fas fa-broom"></i> week(s) Vacumming' + '\n'
   let choreTwoResults =
-    choreTwoTotal + ' - ' + '<i class="fas fa-utensils"></i> Dishes' + '\n'
+    choreTwoTotal + ' - ' + '<i class="fas fa-utensils"></i>week(s) Dishes' + '\n'
   let choreThreeResults =
     choreThreeTotal +
     ' - ' +
-    '<i class="fas fa-tshirt"></i> Folding Clothes' +
+    '<i class="fas fa-tshirt"></i>week(s) Folding Clothes' +
     '\n'
   let choreFourResults =
-    choreFourTotal + ' - ' + '<i class="fas fa-broom"></i> Mopping' + '\n'
+    choreFourTotal + ' - ' + '<i class="fas fa-broom"></i>week(s) Mopping' + '\n'
   let choreFiveResults =
-    choreFiveTotal + ' - ' + '<i class="fas fa-car"></i> Wash Car' + '\n'
+    choreFiveTotal + ' - ' + '<i class="fas fa-car"></i>week(s) Wash Car' + '\n'
 
   let finalDisplayString =
     choreOneResults +
