@@ -27,7 +27,6 @@ var yyyy = today.getFullYear()
 today = mm + '/' + dd + '/' + yyyy
 const todaysDate = document.getElementById('todaysDate')
 const endDate = document.getElementById('endDate')
-
 /*Save Button Event Listener*/
 saveButton.addEventListener('click', function () {
   /*get form input */
@@ -55,12 +54,8 @@ saveButton.addEventListener('click', function () {
   let choreFourTotal = goalInt / choreFourInt
   let choreFiveTotal = goalInt / choreFiveInt
 
-  // choreOneLabel.innerText = choreOneLabel
-  // choreTwoLabel.innerText = choreTwoLabel
-  // choreThreeLabel.innerText = choreThreeLabel
-  // choreFourLabel.innerText = choreFourLabel
-  // choreFiveLabel.innerText = choreFiveLabel
-
+ /*Find end date*/
+  let minDate = determineEndDate(choreOneTotal,choreTwoTotal,choreThreeTotal,choreFourTotal,choreFiveTotal);
   /*display results as string*/
   choreOneTotal = choreOneTotal.toString()
   choreTwoTotal = choreTwoTotal.toString()
@@ -93,7 +88,7 @@ saveButton.addEventListener('click', function () {
     `<br>` +
     choreFiveResults
 
-  displayy.innerHTML = 'test'
+  displayy.innerHTML = minDate
   displayyList.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
 
@@ -122,6 +117,14 @@ function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
       return false
     }
     return true
+}
+function determineEndDate(choreOne,choreTwo,choreThree,choreFour,choreFive){
+  var minWeeks = Math.min(choreOne,choreTwo,choreThree,choreFour,choreFive);
+  var today = new Date();
+  var minDays = minWeeks * 7;
+  today.setDate(today.getDate()+ minDays);
+  return today;
+
 }
 
 //LocalStorage - Get saved items
