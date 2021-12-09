@@ -1,4 +1,5 @@
 const displayy = document.getElementById('totalTime')
+const displayyList = document.getElementById('totalTimeList')
 const saveButton = document.getElementById('saveButton')
 
 /*get form input */
@@ -48,11 +49,11 @@ saveButton.addEventListener('click', function () {
   let choreFourTotal = goalInt / choreFourInt / 7
   let choreFiveTotal = goalInt / choreFiveInt / 7
 
-  choreOneLabel.innerText = choreOneLabel
-  choreTwoLabel.innerText = choreTwoLabel
-  choreThreeLabel.innerText = choreThreeLabel
-  choreFourLabel.innerText = choreFourLabel
-  choreFiveLabel.innerText = choreFiveLabel
+  // choreOneLabel.innerText = choreOneLabel
+  // choreTwoLabel.innerText = choreTwoLabel
+  // choreThreeLabel.innerText = choreThreeLabel
+  // choreFourLabel.innerText = choreFourLabel
+  // choreFiveLabel.innerText = choreFiveLabel
 
   /*display results as string*/
   choreOneTotal = choreOneTotal.toString()
@@ -61,19 +62,32 @@ saveButton.addEventListener('click', function () {
   choreFourTotal = choreFourTotal.toString()
   choreFiveTotal = choreFiveTotal.toString()
 
-  let choreOneResults = choreOneTotal + ' - ' + '(Vacumming)' + '\n'
-  let choreTwoResults = choreTwoTotal + ' - ' + '(Dishes)' + '\n'
-  let choreThreeResults = choreThreeTotal + ' - ' + '(Folding Clothes)' + '\n'
-  let choreFourResults = choreFourTotal + ' - ' + '(Mopping)' + '\n'
-  let choreFiveResults = choreFiveTotal + ' - ' + '(Wash Car)' + '\n'
+  let choreOneResults =
+    choreOneTotal + ' - ' + '<i class="fas fa-broom"></i> Vacumming' + '\n'
+  let choreTwoResults =
+    choreTwoTotal + ' - ' + '<i class="fas fa-utensils"></i> Dishes' + '\n'
+  let choreThreeResults =
+    choreThreeTotal +
+    ' - ' +
+    '<i class="fas fa-tshirt"></i> Folding Clothes' +
+    '\n'
+  let choreFourResults =
+    choreFourTotal + ' - ' + '<i class="fas fa-broom"></i> Mopping' + '\n'
+  let choreFiveResults =
+    choreFiveTotal + ' - ' + '<i class="fas fa-car"></i> Wash Car' + '\n'
 
   let finalDisplayString =
     choreOneResults +
+    `<br>` +
     choreTwoResults +
+    `<br>` +
     choreThreeResults +
+    `<br>` +
     choreFourResults +
+    `<br>` +
     choreFiveResults
 
-  displayy.innerHTML = finalDisplayString
+  displayy.innerHTML = 'test'
+  displayyList.innerHTML = finalDisplayString
   todaysDate.innerHTML = today
 })
