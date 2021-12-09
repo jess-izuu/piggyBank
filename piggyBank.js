@@ -41,6 +41,14 @@ saveButton.addEventListener('click', function () {
   const choreFourInt = parseInt(document.getElementById('choreFour').value, 10)
   const choreFiveInt = parseInt(document.getElementById('choreFive').value, 10)
   const goalInt = parseInt(document.getElementById('goal').value, 10)
+  /* input validation */
+  if(inputVerify(choreOneInt,choreTwoInt,choreThreeInt,choreFourInt,choreFiveInt,goalInt)){
+
+  }
+  else{
+    alert("Error, either a negative number was entered, or a non-numerical input was entered. Please try again.")
+    break;
+  }
 
   /*calculate hours based on goal*/
   let choreOneTotal = goalInt / choreOneInt
@@ -101,6 +109,35 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('choreFour', JSON.stringify(choreFourInt))
   localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
+function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
+  if(isNan(choreOne)){
+    return false;
+  }else if(isNan(choreTwo)){
+    return false
+  }else if(isNan(goal)){
+    return false
+  }else if(isNan(choreThree)){
+    return false
+  }else if(isNan(choreFour)){
+    return false
+  }else if(isNan(choreFive)){
+    return false
+  }
+  if(choreOne < 0){
+    return false
+  }else if(choreTwo < 0){
+    return false
+  }else if(choreThree< 0){
+    return false
+  }else if(choreFour < 0){
+    return false
+  }else if(choreFive < 0){
+    return false
+  }else if(goal < 0){
+    return false
+  }
+  return true
+}
 
 //LocalStorage - Get saved items
 const goalAmount = JSON.parse(localStorage.getItem('goal'))
