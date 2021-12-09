@@ -2,16 +2,6 @@ const displayy = document.getElementById('totalTime')
 const displayyList = document.getElementById('totalTimeList')
 const saveButton = document.getElementById('saveButton')
 
-/*get form input */
-// const choreOneInput = Number(document.querySelector('.choreOne').value)
-// const choreTwoInput = document.getElementById('choreTwo').value
-// const choreThreeInput = document.getElementById('choreThree').value
-// const choreFourInput = document.getElementById('choreFour').value
-// const choreFiveInput = document.getElementById('choreFive').value
-// const goalInput = document.getElementById('goal').value
-
-//console.log(choreOneInput)
-
 /*Get label Text*/
 let choreOneLabel = document.getElementsByClassName('choreOneClass')
 let choreTwoLabel = document.getElementsByClassName('choreTwoClass')
