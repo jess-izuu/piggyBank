@@ -34,20 +34,26 @@ saveButton.addEventListener('click', function () {
   /*parse input to ints*/
   const choreOneInt = parseInt(document.getElementById('choreOne').value, 10)
   const choreTwoInt = parseInt(document.getElementById('choreTwo').value, 10)
-  const choreThreeInt = parseInt(
-    document.getElementById('choreThree').value,
-    10
-  )
+  const choreThreeInt = parseInt(document.getElementById('choreThree').value,10)
   const choreFourInt = parseInt(document.getElementById('choreFour').value, 10)
   const choreFiveInt = parseInt(document.getElementById('choreFive').value, 10)
   const goalInt = parseInt(document.getElementById('goal').value, 10)
+  
+  /* input validation */
+  if(inputVerify(choreOneInt,choreTwoInt,choreThreeInt,choreFourInt,choreFiveInt,goalInt) == true){
+
+  }
+  else{
+    alert("Error, either a negative number was entered, or a non-numerical input was entered. Please try again.")
+    return;
+  }
 
   /*calculate hours based on goal*/
-  let choreOneTotal = goalInt / choreOneInt / 7
-  let choreTwoTotal = goalInt / choreTwoInt / 7
-  let choreThreeTotal = goalInt / choreThreeInt / 7
-  let choreFourTotal = goalInt / choreFourInt / 7
-  let choreFiveTotal = goalInt / choreFiveInt / 7
+  let choreOneTotal = goalInt / choreOneInt
+  let choreTwoTotal = goalInt / choreTwoInt
+  let choreThreeTotal = goalInt / choreThreeInt
+  let choreFourTotal = goalInt / choreFourInt
+  let choreFiveTotal = goalInt / choreFiveInt
 
   // choreOneLabel.innerText = choreOneLabel
   // choreTwoLabel.innerText = choreTwoLabel
@@ -101,6 +107,35 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('choreFour', JSON.stringify(choreFourInt))
   localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
+function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
+    if(isNan(choreOne)){
+      return false;
+    }else if(isNan(choreTwo)){
+      return false
+    }else if(isNan(goal)){
+      return false
+    }else if(isNan(choreThree)){
+      return false
+    }else if(isNan(choreFour)){
+      return false
+    }else if(isNan(choreFive)){
+      return false
+    }
+    if(choreOne < 0){
+      return false
+    }else if(choreTwo < 0){
+      return false
+    }else if(choreThree< 0){
+      return false
+    }else if(choreFour < 0){
+      return false
+    }else if(choreFive < 0){
+      return false
+    }else if(goal < 0){
+      return false
+    }
+    return true
+}
 
 //LocalStorage - Get saved items
 const goalAmount = JSON.parse(localStorage.getItem('goal'))
