@@ -33,18 +33,30 @@ saveButton.addEventListener('click', function () {
   /*parse input to ints*/
   const choreOneInt = parseInt(document.getElementById('choreOne').value, 10)
   const choreTwoInt = parseInt(document.getElementById('choreTwo').value, 10)
-  const choreThreeInt = parseInt(document.getElementById('choreThree').value,10)
+  const choreThreeInt = parseInt(
+    document.getElementById('choreThree').value,
+    10
+  )
   const choreFourInt = parseInt(document.getElementById('choreFour').value, 10)
   const choreFiveInt = parseInt(document.getElementById('choreFive').value, 10)
   const goalInt = parseInt(document.getElementById('goal').value, 10)
-  
-  /* input validation */
-  if(inputVerify(choreOneInt,choreTwoInt,choreThreeInt,choreFourInt,choreFiveInt,goalInt) == true){
 
-  }
-  else{
-    alert("Error,a negative number was entered(or blank field).Please try again.")
-    return;
+  /* input validation */
+  if (
+    inputVerify(
+      choreOneInt,
+      choreTwoInt,
+      choreThreeInt,
+      choreFourInt,
+      choreFiveInt,
+      goalInt
+    ) == true
+  ) {
+  } else {
+    alert(
+      'Error,a negative number was entered(or blank field).Please try again.'
+    )
+    return
   }
 
   /*calculate hours based on goal*/
@@ -54,8 +66,14 @@ saveButton.addEventListener('click', function () {
   let choreFourTotal = goalInt / choreFourInt
   let choreFiveTotal = goalInt / choreFiveInt
 
- /*Find end date*/
-  let minDate = determineEndDate(choreOneTotal,choreTwoTotal,choreThreeTotal,choreFourTotal,choreFiveTotal);
+  /*Find end date*/
+  let minDate = determineEndDate(
+    choreOneTotal,
+    choreTwoTotal,
+    choreThreeTotal,
+    choreFourTotal,
+    choreFiveTotal
+  )
   /*display results as string*/
   choreOneTotal = choreOneTotal.toString()
   choreTwoTotal = choreTwoTotal.toString()
@@ -64,22 +82,27 @@ saveButton.addEventListener('click', function () {
   choreFiveTotal = choreFiveTotal.toString()
 
   let choreOneResults =
-    choreOneTotal + ' - ' + '<i class="fas fa-broom"></i> week(s) Vacumming' + '\n'
+    choreOneTotal +
+    ' - ' +
+    '<i class="fas fa-broom"></i> week(s) Vacumming' +
+    '\n'
   let choreTwoResults =
-    choreTwoTotal + ' - ' + '<i class="fas fa-utensils"></i>week(s) Dishes' + '\n'
+    choreTwoTotal +
+    ' - ' +
+    '<i class="fas fa-utensils"></i>week(s) Dishes' +
+    '\n'
   let choreThreeResults =
     choreThreeTotal +
     ' - ' +
     '<i class="fas fa-tshirt"></i>week(s) Folding Clothes' +
     '\n'
   let choreFourResults =
-    choreFourTotal + ' - ' + '<i class="fas fa-broom"></i>week(s) Mopping' + '\n'
+    choreFourTotal +
+    ' - ' +
+    '<i class="fas fa-broom"></i>week(s) Mopping' +
+    '\n'
   let choreFiveResults =
-<<<<<<< HEAD
     choreFiveTotal + ' - ' + '<i class="fas fa-car"></i> Washing Car' + '\n'
-=======
-    choreFiveTotal + ' - ' + '<i class="fas fa-car"></i>week(s) Wash Car' + '\n'
->>>>>>> fff780767ffb75f9379c3bee05811bf4af91ec50
 
   let finalDisplayString =
     choreOneResults +
@@ -106,29 +129,41 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('choreFour', JSON.stringify(choreFourInt))
   localStorage.setItem('choreFive', JSON.stringify(choreFiveInt))
 })
-function inputVerify(choreOne,choreTwo,choreThree,choreFour,choreFive,goal){
-    if(choreOne < 0 || !/^\d+(\.\d+)?/.exec(choreOne)){
-      return false
-    }else if(choreTwo < 0 || !/^\d+(\.\d+)?/.exec(choreTwo)){
-      return false
-    }else if(choreThree< 0 || !/^\d+(\.\d+)?/.exec(choreThree)){
-      return false
-    }else if(choreFour < 0 || !/^\d+(\.\d+)?/.exec(choreFour)){
-      return false
-    }else if(choreFive < 0 || !/^\d+(\.\d+)?/.exec(choreFive)){
-      return false
-    }else if(goal < 0 || !/^\d+(\.\d+)?/.exec(goal)){
-      return false
-    }
-    return true
+function inputVerify(
+  choreOne,
+  choreTwo,
+  choreThree,
+  choreFour,
+  choreFive,
+  goal
+) {
+  if (choreOne < 0 || !/^\d+(\.\d+)?/.exec(choreOne)) {
+    return false
+  } else if (choreTwo < 0 || !/^\d+(\.\d+)?/.exec(choreTwo)) {
+    return false
+  } else if (choreThree < 0 || !/^\d+(\.\d+)?/.exec(choreThree)) {
+    return false
+  } else if (choreFour < 0 || !/^\d+(\.\d+)?/.exec(choreFour)) {
+    return false
+  } else if (choreFive < 0 || !/^\d+(\.\d+)?/.exec(choreFive)) {
+    return false
+  } else if (goal < 0 || !/^\d+(\.\d+)?/.exec(goal)) {
+    return false
+  }
+  return true
 }
-function determineEndDate(choreOne,choreTwo,choreThree,choreFour,choreFive){
-  var minWeeks = Math.min(choreOne,choreTwo,choreThree,choreFour,choreFive);
-  var today = new Date();
-  var minDays = minWeeks * 7;
-  today.setDate(today.getDate()+ minDays);
-  return today;
-
+function determineEndDate(
+  choreOne,
+  choreTwo,
+  choreThree,
+  choreFour,
+  choreFive
+) {
+  var minWeeks = Math.min(choreOne, choreTwo, choreThree, choreFour, choreFive)
+  var today = new Date()
+  var minDays = minWeeks * 7
+  today.setDate(today.getDate() + minDays)
+  return today
 }
 
 //LocalStorage - Get saved items
